@@ -1,0 +1,44 @@
+[analysis]
+experiment = "h445"
+number = "2"
+beamtime = { start = "2022/1/30 15:53:28", end = "2022/2/14 8:06:02" }
+facility-information = { facility = "HIMAC", room = "PH2" }
+reactions = ["86Kr(d,d')" , "86Kr(d,d')"]
+
+[analysis.beam-information] 
+species = ["kr86", "kr80"]
+energy = "100 MeV/u"
+intensity = "500kcps"
+
+[analysis.environment]
+base_directory = "$ART_ANALYSIS_DIR"
+user = "$ARTEMIS_USER"
+analysis_directory = "$ARTEMIS_WORKDIR"
+
+[analysis.environment.input]
+base = "data"
+rootfig-csv = "data/python/csv"
+
+[analysis.environment.output]
+homepage = "$HOME/HTMLpub/images/analysis/h445-2"
+data = "data/python"
+figure = "figs/python"
+
+[analysis.mapfile] 
+coincidence-register = { cid = "1", file = "conf/map/coin/coin.map", type = "1" }
+plastic-ttc = { cid = "2", file = "conf/map/plastic/platcc.map", type = "2" }
+plastic-tref = { cid = "3", file = "conf/map/plastic/platref.map", type = "2" }
+scaler = { cid = "19", file = "conf/map/scaler/scaler.map", type = "1" }
+scaler2 = { cid = "20", file = "conf/map/scaler/scaler2.map", type = "1" }
+dia-qtc = { cid = "13", file = "conf/map/dia/dia_qtc.map", type = "1" }
+dia-leadin-edge = { cid = "14", file = "conf/map/dia/dia_lead.map", type = "1" }
+recoil-tpc = { cid = "51", file = "conf/map/cat/cat_m.map", type = "1" }
+ssd = { cid = "52", file = "conf/map/cat/cat_m_si.h445-2.map", type = "1" }
+beam-tpc = { cid = "54", file = "conf/map/cat/minitpc.get.h445.map", type = "1" }
+srppac-u-x = { cid = "41", file = "conf/map/srppac/srppacu_x.map", type = "1" }
+srppac-u-y = { cid = "42", file = "conf/map/srppac/srppacu_y.map", type = "1" }
+srppac-d-x = { cid = "44", file = "conf/map/srppac/srppacd_x.map", type = "1" }
+srppac-d-y = { cid = "45", file = "conf/map/srppac/srppacd_y.map", type = "1" }
+veto = { cid = "61", file = "conf/map/veto/veto.map", type = "1" }
+xe = { cid = "71", file = "conf/map/xe/xe.map", type = "1" }
+srppac-ud-cfd = { cid = "46", file = ["conf/map/srppac/srppacu_a_cfd.map","conf/map/srppac/srppacd_a_cfd.map"], type = "1" }

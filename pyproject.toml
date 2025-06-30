@@ -1,0 +1,22 @@
+[project]
+name = "h445-2-python-ana"
+version = "0.1.0"
+description = "python analysis code for h445-2 experiment"
+readme = "README.md"
+authors = [
+    { name = "FumiHubCNS", email = "fendo@cns.s.u-tokyo.ac.jp" }
+]
+requires-python = ">=3.13"
+dependencies = [
+    "catmlib",
+]
+
+[project.scripts]
+h445-2-python-ana = "h445_2_python_ana:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.uv.sources]
+catmlib = { git = "https://github.com/FumiHubCNS/catm-python-lib.git", rev = "main"}
