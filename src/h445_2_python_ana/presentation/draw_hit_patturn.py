@@ -33,13 +33,13 @@ def get_padinfo():
 def load_data(input_file_path_name, event_list_path_name):
 
 	toml_input = this_file_path / '../../../parameters.toml'
-	toml_config = catutil.dataforming.read_toml_file(toml_input)
+	toml_config = catutil.dataforming.read_toml_file(toml_input) 
 
 	base_path_info = toml_config["analysis"]["environment"]
 	base_input_path = base_path_info["input"]["base"]
 	base_output_figure_path = toml_config["analysis"]["environment"]["output"]["figure"]
 
-	analysis_directory_path = base_path_info["analysis_directory"] 	
+	analysis_directory_path = base_path_info["analysis-directory"] 	
 
 	input_path  = analysis_directory_path + "/" + base_input_path + "/" + input_file_path_name
 	event_path  = analysis_directory_path + "/" + base_input_path + "/" + event_list_path_name
@@ -243,7 +243,6 @@ def main():
 			counts += 1
 		else:
 			print(f"Skipping logic for {evtnum}")
-
 
 if __name__ == "__main__":
 	main()

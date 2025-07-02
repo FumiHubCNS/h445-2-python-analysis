@@ -11,16 +11,17 @@ energy = "100 MeV/u"
 intensity = "500kcps"
 
 [analysis.environment]
-base_directory = "$ART_ANALYSIS_DIR"
+base-directory = "$ART_ANALYSIS_DIR"
 user = "$ARTEMIS_USER"
-analysis_directory = "$ARTEMIS_WORKDIR"
+analysis-directory = "$ARTEMIS_WORKDIR"
+get-config = "$GET_CONFIG_PATH"
 
 [analysis.environment.input]
 base = "data"
 rootfig-csv = "data/python/csv"
 
 [analysis.environment.output]
-homepage = "$HOME/HTMLpub/images/analysis/h445-2"
+homepage = "$HOME/HTMLpub/analysis/h445-2"
 data = "data/python"
 figure = "figs/python"
 
