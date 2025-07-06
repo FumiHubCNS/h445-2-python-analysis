@@ -13,8 +13,8 @@ sahoでは`curl`などのコマンドが使えないことに加え、`uv`で使
 
 バージョンなどは自身で最適なものを選んでくれれば良いですが、ひとまず筆者は以下のバージョンをインストールしました。
 
-[uv-x86_64-unknown-linux-musl.tar.gz](https://github.com/astral-sh/uv/releases/download/0.7.19/uv-x86_64-unknown-linux-musl.tar.gz)
-[Python-3.13.0.tgz](https://www.python.org/ftp/python/3.13.0/Python-3.13.0.tgz)
+- [uv-x86_64-unknown-linux-musl.tar.gz](https://github.com/astral-sh/uv/releases/download/0.7.19/uv-x86_64-unknown-linux-musl.tar.gz)
+- [Python-3.13.0.tgz](https://www.python.org/ftp/python/3.13.0/Python-3.13.0.tgz)
 
 これらをsahoに移したとに以下のような適当なコマンドで展開してください。
 
