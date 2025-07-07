@@ -33,7 +33,7 @@ def load_parameters_toml(tomlfilepath='../../../parameters.toml'):
 		toml_config["analysis"]["environment"]["output"]["homepage"] 
 		+ "/figure/figure001.png"
 	)
-        return toml_config, base_path, homepage_path
+    return toml_config, base_path, homepage_path
 		
 def load_maps_path():
 	toml_input = this_file_path / '../../../parameters.toml'
