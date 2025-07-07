@@ -23,8 +23,11 @@ def load_get_config_path():
 		
 	return catutil.dataforming.expand_environment_variables( toml_config["analysis"]["environment"]["get-config"] )
 		
-def load_parameters_toml(tomlfilepath='../../../parameters.toml'):
-	toml_input = this_file_path / tomlfilepath
+def load_parameters_toml(tomlfilepath=None):
+	if tomlfilepath is None:
+		toml_input = this_file_path / '../../../parameters.toml'
+	else:
+		toml_input = tomlfilepath
 	toml_config = catutil.dataforming.read_toml_file(toml_input)
 		
 	analysis_directory_path = toml_config["analysis"]["environment"]["analysis-directory"] 
