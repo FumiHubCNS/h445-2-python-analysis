@@ -606,9 +606,9 @@ def execute_relative_calibration(padsinfo=None, base_path=None, save_path=None):
         for i in range(len(commons[j])):
             data_id = padsinfo[1].ids[commons[j][i]]
            
-            best_p0 = 1000#"unsigned_p0"
-            best_p1 = 2000#"unsigned_p1"
-            best_chi2 = -1000
+            best_p0 = -1
+            best_p1 = -1
+            best_chi2 = -1
 
             if padsinfo[1].hist[commons[j][i]] is not None:
                 data_y = np.array(padsinfo[1].hist[commons[j][i]])
@@ -633,6 +633,18 @@ def execute_relative_calibration(padsinfo=None, base_path=None, save_path=None):
         df_calib = pd.DataFrame(fit_results)
         df_calib.to_csv(calibration_file_path, index=False, sep=" ")
 
+    if 0:
+        padsinfo[1].best_p0 = [ -1 ] * len(padsinfo[1].ids)
+        padsinfo[1].best_p1 = [ -1 ] * len(padsinfo[1].ids)
+        padsinfo[1].best_chi2 = [ -1 ] * len(padsinfo[1].ids)
+
+        for i in range(len(fit_results)):
+            padsinfo[1].best_p0[i] = fit_results[i][1]
+            padsinfo[1].best_p1[i] = fit_results[i][2]
+            padsinfo[1].best_chi2[i] = fit_results[i][3]
+        
+        pkl_path = f"{base_path}/data/kr80/padcalib/catm-histogram-calibration.pkl"
+        h445util.save_class_object(padsinfo[1], pkl_path)
 
 def main():
     parser = argparse.ArgumentParser()
