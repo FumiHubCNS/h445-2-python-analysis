@@ -73,7 +73,7 @@ wheels = [
 ]
 
 [[package]]
-name = "h445-2-python-ana"
+name = "h445lib2"
 version = "0.1.0"
 source = { editable = "." }
 dependencies = [

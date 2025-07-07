@@ -1,5 +1,5 @@
 [project]
-name = "h445-2-python-ana"
+name = "h445lib2"
 version = "0.1.0"
 description = "python analysis code for h445-2 experiment"
 readme = "README.md"
@@ -12,7 +12,7 @@ dependencies = [
 ]
 
 [project.scripts]
-h445-2-python-ana = "h445_2_python_ana:main"
+h445lib2 = "h445lib2:main"
 
 [build-system]
 requires = ["hatchling"]
