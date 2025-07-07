@@ -23,6 +23,18 @@ def load_get_config_path():
 		
 	return catutil.dataforming.expand_environment_variables( toml_config["analysis"]["environment"]["get-config"] )
 		
+def load_parameters_toml(tomlfilepath='../../../parameters.toml'):
+	toml_input = this_file_path / tomlfilepath
+	toml_config = catutil.dataforming.read_toml_file(toml_input)
+		
+	analysis_directory_path = toml_config["analysis"]["environment"]["analysis-directory"] 
+	base_path = catutil.dataforming.expand_environment_variables(analysis_directory_path)	
+	homepage_path = catutil.dataforming.expand_environment_variables(
+		toml_config["analysis"]["environment"]["output"]["homepage"] 
+		+ "/figure/figure001.png"
+	)
+        return toml_config, base_path, homepage_path
+		
 def load_maps_path():
 	toml_input = this_file_path / '../../../parameters.toml'
 	toml_config = catutil.dataforming.read_toml_file(toml_input)
